@@ -2,13 +2,12 @@
 
 namespace QUI\QueueManager\Examples;
 
-use QUI\Mail\Mailer;
 use QUI\QueueManager\QueueWorker;
 
 /**
- * Class QueueWorker
+ * Class ExampleWorker
  *
- * A job worker executes a job based on its job data
+ * Example worker that reverses a string
  *
  * @package quiqqer/queuemanager
  */
@@ -21,18 +20,7 @@ class ExampleWorker extends QueueWorker
      */
     public function execute()
     {
-        $Mail = new Mailer(array(
-            'MAILFrom'     => "peat@pcsg.de",
-            'MAILFromText' => "My job is done",
-            'MAILReplyTo'  => "peat@pcsg.de"
-        ));
-
-        $Mail->addRecipient('p.mueller@pcsg.de');
-        $Mail->setSubject('Job-Queue test');
-        $Mail->setBody($this->data['mailBody']);
-
-        return array(
-            'mailSent' => $Mail->send()
-        );
+        $string = $this->data['string'];
+        return strrev($string);
     }
 }
