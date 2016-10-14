@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiqqer>
+    <settings>
+
+        <config>
+            <section name="queue">
+                <conf name="server">
+                    <type><![CDATA[string]]></type>
+                </conf>
+            </section>
+        </config>
+
+        <window name="queuemanagersettings">
+            <title>
+                <locale group="quiqqer/queuemanager" var="settings.title"/>
+            </title>
+            <params>
+                <icon>fa fa-server</icon>
+            </params>
+
+            <categories>
+                <category name="queuemanager" index="1">
+                    <text>
+                        <locale group="quiqqer/queuemanager" var="settings.category.queuemanager.title"/>
+                    </text>
+                    <icon>fa fa-tasks</icon>
+
+                    <settings title="server" name="queue">
+                        <title>
+                            <locale group="quiqqer/queuemanager" var="settings.queuemanager.server.title"/>
+                        </title>
+
+                        <input conf="queue.server"
+                               data-qui="package/quiqqer/queuemanager/bin/controls/ServerSelect"
+                        >
+                            <text>
+                                <locale group="quiqqer/queuemanager"
+                                        var="settings.queuemanager.server.settings.server.title"/>
+                            </text>
+                            <description>
+                                <locale group="quiqqer/queuemanager"
+                                        var="settings.queuemanager.server.settings.server.desc"/>
+                            </description>
+                        </input>
+
+                    </settings>
+                </category>
+
+            </categories>
+
+        </window>
+
+    </settings>
+</quiqqer>

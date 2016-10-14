@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<locales>
+
+    <groups name="quiqqer/queuemanager" datatype="js">
+
+        <locale name="controls.serverselect.no.servers.found" html="true">
+            <de><![CDATA[Es sind z.Z. keine Module installiert, die einen Queue-Server bereitstellen. Bitte installieren Sie ein entsprechendes Modul (z.B. <b>quiqqer/queueserver</b>).]]></de>
+        </locale>
+
+    </groups>
+
+    <groups name="quiqqer/queuemanager" datatype="php,js">
+
+        <locale name="settings.title">
+            <de><![CDATA[Queue-Server Manager Einstellungen]]></de>
+        </locale>
+        <locale name="settings.category.queuemanager.title">
+            <de><![CDATA[Queue-Server]]></de>
+        </locale>
+        <locale name="settings.queuemanager.server.title">
+            <de><![CDATA[Queue-Server festlegen]]></de>
+        </locale>
+        <locale name="settings.queuemanager.server.settings.server.title">
+            <de><![CDATA[Queue-Server]]></de>
+        </locale>
+        <locale name="settings.queuemanager.server.settings.server.desc">
+            <de><![CDATA[Wählen Sie den Queue-Server, der die einzelnen Queue-Jobs abarbeiten soll. Queue-Server werden über separate QUIQQER-Pakete bereitgestellt.]]></de>
+        </locale>
+
+    </groups>
+
+    <groups name="quiqqer/queuemanager" datatype="php">
+
+        <locale name="exception.queuemanager.not.queue.server.configured">
+            <de><![CDATA[Es wurde noch kein Queue-Server festgelegt. Bitte legen Sie einen Queue-Server in den Einstellungen fest.]]></de>
+        </locale>
+        <locale name="exception.queuemanager.packages.dir.not.found">
+            <de><![CDATA[Die verfügbaren Queue-Server konnten nicht abgerufen werden, da kein packages-Ordner festgelgt ist.]]></de>
+        </locale>
+        <locale name="exception.queuemanager.addjob.error">
+            <de><![CDATA[Bei Erstellung eines Queue-Jobs ist ein Fehler aufgetreten: [error]]]></de>
+        </locale>
+        <locale name="exception.queuemanager.getjobstatus.error">
+            <de><![CDATA[Beim Holen des Status eines Queue-Jobs ist ein Fehler aufgetreten: [error]]]></de>
+        </locale>
+        <locale name="exception.queuemanager.getjobresult.error">
+            <de><![CDATA[Beim Holen des Ergebnisses eines Queue-Jobs ist ein Fehler aufgetreten: [error]]]></de>
+        </locale>
+        <locale name="exception.queuemanager.deletejob.error">
+            <de><![CDATA[Beim Löschen eines Queue-Jobs ist ein Fehler aufgetreten: [error]]]></de>
+        </locale>
+
+    </groups>
+
+</locales>
