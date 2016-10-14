@@ -115,5 +115,5 @@ dann ohne weitere Rückmeldung fertig (z.B. ein `QueueWorker` der eine E-Mail ve
     
     $jobResult = \QUI\QueueManager\QueueManager::getJobResult($jobId);
     
-    // enthält den umgekehrten String oder wirft eine Exception, wenn der Job noch in Bearbeitung ist oder noch nicht bearbeitet wurde
+    // enthält den umgekehrten String ("reiv ierd iewz sniE") oder wirft eine Exception, wenn der Job noch in Bearbeitung ist oder noch nicht bearbeitet wurde
 ```
