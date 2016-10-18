@@ -15,6 +15,13 @@ use QUI\QueueManager\Interfaces\IQueueWorker;
 abstract class QueueWorker implements IQueueWorker
 {
     /**
+     * ID of job that is processed
+     *
+     * @var integer
+     */
+    protected $jobId = null;
+
+    /**
      * Job data (necessary for job execution)
      *
      * @var mixed
@@ -22,12 +29,14 @@ abstract class QueueWorker implements IQueueWorker
     protected $data = null;
 
     /**
-     * QueueServerWorker constructor.
+     * QueueWorker constructor.
      *
+     * @param integer $jobId - Job ID
      * @param mixed $data
      */
-    public function __construct($data)
+    public function __construct($jobId, $data)
     {
+        $this->jobId = $jobId;
         $this->data = $data;
     }
 
@@ -39,6 +48,16 @@ abstract class QueueWorker implements IQueueWorker
     public static function getClass()
     {
         return '\\' . static::class;
+    }
+
+    /**
+     * Write log entry for the job that is currenty processed
+     *
+     * @param $msg
+     */
+    public function writeLogEntry($msg)
+    {
+        QueueManager::writeJobLogEntry($this->jobId, $msg);
     }
 
     /**

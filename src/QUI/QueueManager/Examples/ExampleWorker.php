@@ -2,6 +2,7 @@
 
 namespace QUI\QueueManager\Examples;
 
+use QUI\QueueManager\QueueManager;
 use QUI\QueueManager\QueueWorker;
 
 /**
@@ -20,7 +21,9 @@ class ExampleWorker extends QueueWorker
      */
     public function execute()
     {
+        $this->writeLogEntry('String came in: ' . $this->data['string']);
         $string = $this->data['string'];
+        $this->writeLogEntry('String reversed.');
         return strrev($string);
     }
 }

@@ -29,6 +29,23 @@ interface IQueueServer
     public static function getJobStatus($jobId);
 
     /**
+     * Write log entry for a job
+     *
+     * @param integer $jobId
+     * @param string $msg
+     * @return bool - success
+     */
+    public static function writeJobLogEntry($jobId, $msg);
+
+    /**
+     * Get event log for specific job
+     *
+     * @param integer $jobId
+     * @return array
+     */
+    public static function getJobLog($jobId);
+
+    /**
      * Get result of a specific job
      *
      * @param integer $jobId

@@ -91,6 +91,51 @@ class QueueManager
     }
 
     /**
+     * Get log of job
+     *
+     * @param integer $jobId
+     * @return array - job log entries
+     *
+     * @throws ServerException
+     */
+    public static function getJobLog($jobId)
+    {
+        try {
+            return self::getQueueServer()->getJobLog($jobId);
+        } catch (\Exception $Exception) {
+            throw new ServerException(
+                'exception.queuemanager.getjoblog.error',
+                array(
+                    'error' => $Exception->getMessage()
+                )
+            );
+        }
+    }
+
+    /**
+     * Write entry for job log
+     *
+     * @param integer $jobId
+     * @param string $msg - log entry message
+     * @return bool - success
+     *
+     * @throws ServerException
+     */
+    public static function writeJobLogEntry($jobId, $msg)
+    {
+        try {
+            return self::getQueueServer()->writeJobLogEntry($jobId, $msg);
+        } catch (\Exception $Exception) {
+            throw new ServerException(
+                'exception.queuemanager.writejoblogentry.error',
+                array(
+                    'error' => $Exception->getMessage()
+                )
+            );
+        }
+    }
+
+    /**
      * Cacnel a job
      *
      * @param integer $jobId
