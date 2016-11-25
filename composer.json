@@ -17,7 +17,7 @@
         "url": "http://www.pcsg.de"
     },
     "require": {
-        
+        "quiqqer/queueserver": "dev-dev"
     }
     ,"autoload": {
   "psr-4": {
