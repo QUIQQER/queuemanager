@@ -21,6 +21,15 @@ interface IQueueServer
     public static function queueJob(QueueJob $Job);
 
     /**
+     * Clone a job and queue it immediately
+     *
+     * @param integer $jobId - Job ID
+     * @param integer $priority - (new) job priority
+     * @return integer - ID of cloned job
+     */
+    public static function cloneJob($jobId, $priority);
+
+    /**
      * Get status of a job
      *
      * @param integer $jobId
@@ -56,16 +65,10 @@ interface IQueueServer
      */
     public static function getJobResult($jobId, $deleteJob = true);
 
-//    /**
-//     * Set result of a specific job
-//     *
-//     * @param integer $jobId
-//     * @param array|string $result
-//     * @return bool - success
-//     *
-//     * @throws Exception
-//     */
-//    public static function setJobResult($jobId, $result);
+    /**
+     * Close server connection
+     */
+    public static function closeConnection();
 
     /**
      * Delete a job

@@ -186,6 +186,48 @@ class QueueManager
     }
 
     /**
+     * Clone a job and queue it immediately
+     *
+     * @param integer $jobId - ID of job that is to be cloned
+     * @param integer $priority - priority of cloned job
+     * @return int - cloned job ID
+     * @throws ServerException
+     */
+    public static function cloneJob($jobId, $priority)
+    {
+        try {
+            return self::getQueueServer()->cloneJob($jobId, $priority);
+        } catch (\Exception $Exception) {
+            throw new ServerException(
+                'exception.queuemanager.clonejob.error',
+                array(
+                    'error' => $Exception->getMessage()
+                )
+            );
+        }
+    }
+
+    /**
+     * Close the current connection to the queue server
+     *
+     * @return void
+     * @throws ServerException
+     */
+    public static function closeConnection()
+    {
+        try {
+            self::getQueueServer()->closeConnection();
+        } catch (\Exception $Exception) {
+            throw new ServerException(
+                'exception.queuemanager.closeconnection.error',
+                array(
+                    'error' => $Exception->getMessage()
+                )
+            );
+        }
+    }
+
+    /**
      * Get all available queue servers via reading queueserver.xml files from
      * all packages
      *

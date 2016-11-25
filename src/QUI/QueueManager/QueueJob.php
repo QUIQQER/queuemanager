@@ -70,10 +70,18 @@ class QueueJob extends QUI\QDOM
     /**
      * Execute the job
      *
+     * @param bool $closeConnection (optional) - determines if the connection to the server
+     * shall be automatically closed after the job is queued
      * @return integer - job ID
      */
-    public function queue()
+    public function queue($closeConnection = true)
     {
-        return QueueManager::addJob($this);
+        $jobId = QueueManager::addJob($this);
+
+        if ($closeConnection) {
+            QueueManager::closeConnection();
+        }
+
+        return $jobId;
     }
 }

@@ -49,11 +49,17 @@
         <locale name="exception.queuemanager.deletejob.error">
             <de><![CDATA[Beim Löschen eines Queue-Jobs ist ein Fehler aufgetreten: [error]]]></de>
         </locale>
+        <locale name="exception.queuemanager.clonejob.error">
+            <de><![CDATA[Beim Klonen eines Queue-Jobs ist ein Fehler aufgetreten: [error]]]></de>
+        </locale>
         <locale name="exception.queuemanager.getjoblog.error">
             <de><![CDATA[Beim Abruf des Logs eines Queue-Jobs ist ein Fehler aufgetreten: [error]]]></de>
         </locale>
         <locale name="exception.queuemanager.writejoblogentry.error">
             <de><![CDATA[Beim Schreiben des Logs eines Queue-Jobs ist ein Fehler aufgetreten: [error]]]></de>
+        </locale>
+        <locale name="exception.queuemanager.closeconnection.error">
+            <de><![CDATA[Beim Schließen der Verbindung zum Queue-Server ist ein Fehler aufgetreten: [error]]]></de>
         </locale>
 
     </groups>
