@@ -61,9 +61,21 @@ abstract class QueueWorker implements IQueueWorker
     }
 
     /**
+     * Clone the job this worker is executing
+     * and queue it in the server queue
+     *
+     * @param integer $priority (optional) - new job priority
+     * @return integer - ID of cloned job
+     */
+    public function cloneJob($priority = null)
+    {
+        return QueueManager::cloneJob($this->jobId, $priority);
+    }
+
+    /**
      * Execute job
      *
      * @return mixed
      */
-    abstract function execute();
+    abstract public function execute();
 }
