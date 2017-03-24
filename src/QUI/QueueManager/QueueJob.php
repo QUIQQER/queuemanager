@@ -34,7 +34,7 @@ class QueueJob extends QUI\QDOM
      * @param string $workerClass - class of Worker that executes the job
      * @param array $attributes - job attributes
      */
-    public function __construct($workerClass, $data = null, $attributes = array())
+    public function __construct($workerClass, $data = false, $attributes = array())
     {
         $this->setAttributes(array(
             'priority'       => 1,
