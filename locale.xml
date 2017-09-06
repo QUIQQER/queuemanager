@@ -11,6 +11,15 @@
 
     <groups name="quiqqer/queuemanager" datatype="php,js">
 
+        <locale name="package.title">
+            <de><![CDATA[QUIQQER - Queuemanager]]></de>
+            <en><![CDATA[QUIQQER - Queuemanager]]></en>
+        </locale>
+        <locale name="package.description">
+            <de><![CDATA[Stellt ein Grundgerüst für Queue Server Jobs und Worker bereit.]]></de>
+            <en><![CDATA[Provides a basic framework for queue server jobs and workers.]]></en>
+        </locale>
+
         <locale name="settings.title">
             <de><![CDATA[Queue-Server Manager Einstellungen]]></de>
         </locale>
