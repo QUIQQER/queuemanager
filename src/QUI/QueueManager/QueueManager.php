@@ -37,6 +37,8 @@ class QueueManager
         try {
             return self::getQueueServer()->queueJob($Job);
         } catch (\Exception $Exception) {
+            QUI\System\Log::writeException($Exception);
+
             throw new ServerException(
                 'exception.queuemanager.addjob.error',
                 array(
@@ -59,6 +61,8 @@ class QueueManager
         try {
             return self::getQueueServer()->getJobStatus($jobId);
         } catch (\Exception $Exception) {
+            QUI\System\Log::writeException($Exception);
+            
             throw new ServerException(
                 'exception.queuemanager.getjobstatus.error',
                 array(
@@ -81,6 +85,8 @@ class QueueManager
         try {
             return self::getQueueServer()->getJobResult($jobId);
         } catch (\Exception $Exception) {
+            QUI\System\Log::writeException($Exception);
+            
             throw new ServerException(
                 'exception.queuemanager.getjobresult.error',
                 array(
@@ -103,6 +109,8 @@ class QueueManager
         try {
             return self::getQueueServer()->getJobLog($jobId);
         } catch (\Exception $Exception) {
+            QUI\System\Log::writeException($Exception);
+            
             throw new ServerException(
                 'exception.queuemanager.getjoblog.error',
                 array(
@@ -126,6 +134,8 @@ class QueueManager
         try {
             return self::getQueueServer()->writeJobLogEntry($jobId, $msg);
         } catch (\Exception $Exception) {
+            QUI\System\Log::writeException($Exception);
+            
             throw new ServerException(
                 'exception.queuemanager.writejoblogentry.error',
                 array(
@@ -148,6 +158,8 @@ class QueueManager
         try {
             return self::getQueueServer()->deleteJob($jobId);
         } catch (\Exception $Exception) {
+            QUI\System\Log::writeException($Exception);
+            
             throw new ServerException(
                 'exception.queuemanager.deletejob.error',
                 array(
@@ -198,6 +210,8 @@ class QueueManager
         try {
             return self::getQueueServer()->cloneJob($jobId, $priority);
         } catch (\Exception $Exception) {
+            QUI\System\Log::writeException($Exception);
+            
             throw new ServerException(
                 'exception.queuemanager.clonejob.error',
                 array(
@@ -218,6 +232,8 @@ class QueueManager
         try {
             self::getQueueServer()->closeConnection();
         } catch (\Exception $Exception) {
+            QUI\System\Log::writeException($Exception);
+            
             throw new ServerException(
                 'exception.queuemanager.closeconnection.error',
                 array(
