@@ -2,7 +2,7 @@
   "name": "quiqqer/queuemanager",
   "type": "quiqqer-plugin",
   "description": "Provides a basic framework for queue server jobs and workers.",
-  "version": "dev-master",
+  "version": "1.0.0",
   "license": "GPL-3.0+",
   "authors": [
     {
