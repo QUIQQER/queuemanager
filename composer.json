@@ -1,6 +1,6 @@
 {
   "name": "quiqqer/queuemanager",
-  "type": "quiqqer-module",
+  "type": "quiqqer-plugin",
   "description": "Provides a basic framework for queue server jobs and workers.",
   "version": "dev-dev",
   "license": "GPL-3.0+",
