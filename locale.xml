@@ -5,6 +5,7 @@
 
         <locale name="controls.serverselect.no.servers.found" html="true">
             <de><![CDATA[Es sind z.Z. keine Module installiert, die einen Queue-Server bereitstellen. Bitte installieren Sie ein entsprechendes Modul (z.B. <b>quiqqer/queueserver</b>).]]></de>
+            <en><![CDATA[Currenty there are no QUIQQER plugins installed that provide a Queue-Server. Please install such a plugin to use the QUIQQER Queue Manager (e.g. <b>quiqqer/queueserver</b>).]]></en>
         </locale>
 
     </groups>
@@ -12,8 +13,8 @@
     <groups name="quiqqer/queuemanager" datatype="php,js">
 
         <locale name="package.title">
-            <de><![CDATA[QUIQQER - Queuemanager]]></de>
-            <en><![CDATA[QUIQQER - Queuemanager]]></en>
+            <de><![CDATA[QUIQQER - Queue-Server Manager]]></de>
+            <en><![CDATA[QUIQQER - Queue Server Manager]]></en>
         </locale>
         <locale name="package.description">
             <de><![CDATA[Stellt ein Grundgerüst für Queue Server Jobs und Worker bereit.]]></de>
@@ -21,19 +22,24 @@
         </locale>
 
         <locale name="settings.title">
-            <de><![CDATA[Queue-Server Manager Einstellungen]]></de>
+            <de><![CDATA[Queue-Server Manager]]></de>
+            <en><![CDATA[Queue Server Manager]]></en>
         </locale>
         <locale name="settings.category.queuemanager.title">
             <de><![CDATA[Queue-Server]]></de>
+            <en><![CDATA[Queue Server]]></en>
         </locale>
         <locale name="settings.queuemanager.server.title">
             <de><![CDATA[Queue-Server festlegen]]></de>
+            <en><![CDATA[Set Queue Server]]></en>
         </locale>
         <locale name="settings.queuemanager.server.settings.server.title">
             <de><![CDATA[Queue-Server]]></de>
+            <en><![CDATA[Queue Server]]></en>
         </locale>
         <locale name="settings.queuemanager.server.settings.server.desc">
             <de><![CDATA[Wählen Sie den Queue-Server, der die einzelnen Queue-Jobs abarbeiten soll. Queue-Server werden über separate QUIQQER-Pakete bereitgestellt.]]></de>
+            <en><![CDATA[Choose the Queue Server that execute queue jobs. Queue Servers are provided by separate QUIQQER plugins.]]></en>
         </locale>
 
     </groups>
@@ -42,33 +48,43 @@
 
         <locale name="exception.queuemanager.not.queue.server.configured">
             <de><![CDATA[Es wurde noch kein Queue-Server festgelegt. Bitte legen Sie einen Queue-Server in den Einstellungen fest.]]></de>
+            <en><![CDATA[No Queue Server has been set yet. Please set a Queue Server in the settings.]]></en>
         </locale>
         <locale name="exception.queuemanager.packages.dir.not.found">
-            <de><![CDATA[Die verfügbaren Queue-Server konnten nicht abgerufen werden, da kein packages-Ordner festgelgt ist.]]></de>
+            <de><![CDATA[Die verfügbaren Queue-Server konnten nicht abgerufen werden, da kein packages-Ordner festgelegt ist.]]></de>
+            <en><![CDATA[The available Queue Server plugins could not be loaded because no packages folder has been determined yet.]]></en>
         </locale>
         <locale name="exception.queuemanager.addjob.error">
-            <de><![CDATA[Bei Erstellung eines Queue-Jobs ist ein Fehler aufgetreten: [error]]]></de>
+            <de><![CDATA[Bei Einreihung eines Queue-Jobs ist ein Fehler aufgetreten: [error]]]></de>
+            <en><![CDATA[An error occurred while queueing a job: [error]]]></en>
         </locale>
         <locale name="exception.queuemanager.getjobstatus.error">
             <de><![CDATA[Beim Holen des Status eines Queue-Jobs ist ein Fehler aufgetreten: [error]]]></de>
+            <en><![CDATA[An error occurred while fetchting the status of a queue job: [error]]]></en>
         </locale>
         <locale name="exception.queuemanager.getjobresult.error">
             <de><![CDATA[Beim Holen des Ergebnisses eines Queue-Jobs ist ein Fehler aufgetreten: [error]]]></de>
+            <en><![CDATA[An error occurred while fetching the result of a queue job: [error]]]></en>
         </locale>
         <locale name="exception.queuemanager.deletejob.error">
             <de><![CDATA[Beim Löschen eines Queue-Jobs ist ein Fehler aufgetreten: [error]]]></de>
+            <en><![CDATA[An error occurred while deleting a queue job: [error]]]></en>
         </locale>
         <locale name="exception.queuemanager.clonejob.error">
             <de><![CDATA[Beim Klonen eines Queue-Jobs ist ein Fehler aufgetreten: [error]]]></de>
+            <en><![CDATA[An error occurred while cloning a queue job: [erro]]]></en>
         </locale>
         <locale name="exception.queuemanager.getjoblog.error">
             <de><![CDATA[Beim Abruf des Logs eines Queue-Jobs ist ein Fehler aufgetreten: [error]]]></de>
+            <en><![CDATA[An error occured while fetching a queue job log: [error]]]></en>
         </locale>
         <locale name="exception.queuemanager.writejoblogentry.error">
             <de><![CDATA[Beim Schreiben des Logs eines Queue-Jobs ist ein Fehler aufgetreten: [error]]]></de>
+            <en><![CDATA[An error occurred while writing a queue job log: [error]]]></en>
         </locale>
         <locale name="exception.queuemanager.closeconnection.error">
             <de><![CDATA[Beim Schließen der Verbindung zum Queue-Server ist ein Fehler aufgetreten: [error]]]></de>
+            <en><![CDATA[An error occurred while closing the Queue Server connection: [error]]]></en>
         </locale>
 
     </groups>

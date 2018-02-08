@@ -37,12 +37,15 @@ class QueueManager
         try {
             return self::getQueueServer()->queueJob($Job);
         } catch (\Exception $Exception) {
-            throw new ServerException(
-                'exception.queuemanager.addjob.error',
+            QUI\System\Log::writeException($Exception);
+
+            throw new ServerException(array(
+                'quiqqer/queuemanager',
+                'exception.queuemanager.getjobresult.error',
                 array(
                     'error' => $Exception->getMessage()
                 )
-            );
+            ));
         }
     }
 
@@ -59,12 +62,15 @@ class QueueManager
         try {
             return self::getQueueServer()->getJobStatus($jobId);
         } catch (\Exception $Exception) {
-            throw new ServerException(
-                'exception.queuemanager.getjobstatus.error',
+            QUI\System\Log::writeException($Exception);
+
+            throw new ServerException(array(
+                'quiqqer/queuemanager',
+                'exception.queuemanager.getjobresult.error',
                 array(
                     'error' => $Exception->getMessage()
                 )
-            );
+            ));
         }
     }
 
@@ -81,12 +87,15 @@ class QueueManager
         try {
             return self::getQueueServer()->getJobResult($jobId);
         } catch (\Exception $Exception) {
-            throw new ServerException(
+            QUI\System\Log::writeException($Exception);
+
+            throw new ServerException(array(
+                'quiqqer/queuemanager',
                 'exception.queuemanager.getjobresult.error',
                 array(
                     'error' => $Exception->getMessage()
                 )
-            );
+            ));
         }
     }
 
@@ -103,12 +112,15 @@ class QueueManager
         try {
             return self::getQueueServer()->getJobLog($jobId);
         } catch (\Exception $Exception) {
-            throw new ServerException(
-                'exception.queuemanager.getjoblog.error',
+            QUI\System\Log::writeException($Exception);
+
+            throw new ServerException(array(
+                'quiqqer/queuemanager',
+                'exception.queuemanager.getjobresult.error',
                 array(
                     'error' => $Exception->getMessage()
                 )
-            );
+            ));
         }
     }
 
@@ -126,12 +138,15 @@ class QueueManager
         try {
             return self::getQueueServer()->writeJobLogEntry($jobId, $msg);
         } catch (\Exception $Exception) {
-            throw new ServerException(
-                'exception.queuemanager.writejoblogentry.error',
+            QUI\System\Log::writeException($Exception);
+
+            throw new ServerException(array(
+                'quiqqer/queuemanager',
+                'exception.queuemanager.getjobresult.error',
                 array(
                     'error' => $Exception->getMessage()
                 )
-            );
+            ));
         }
     }
 
@@ -148,12 +163,15 @@ class QueueManager
         try {
             return self::getQueueServer()->deleteJob($jobId);
         } catch (\Exception $Exception) {
-            throw new ServerException(
-                'exception.queuemanager.deletejob.error',
+            QUI\System\Log::writeException($Exception);
+
+            throw new ServerException(array(
+                'quiqqer/queuemanager',
+                'exception.queuemanager.getjobresult.error',
                 array(
                     'error' => $Exception->getMessage()
                 )
-            );
+            ));
         }
     }
 
@@ -198,12 +216,15 @@ class QueueManager
         try {
             return self::getQueueServer()->cloneJob($jobId, $priority);
         } catch (\Exception $Exception) {
-            throw new ServerException(
-                'exception.queuemanager.clonejob.error',
+            QUI\System\Log::writeException($Exception);
+
+            throw new ServerException(array(
+                'quiqqer/queuemanager',
+                'exception.queuemanager.getjobresult.error',
                 array(
                     'error' => $Exception->getMessage()
                 )
-            );
+            ));
         }
     }
 
@@ -218,12 +239,15 @@ class QueueManager
         try {
             self::getQueueServer()->closeConnection();
         } catch (\Exception $Exception) {
-            throw new ServerException(
-                'exception.queuemanager.closeconnection.error',
+            QUI\System\Log::writeException($Exception);
+
+            throw new ServerException(array(
+                'quiqqer/queuemanager',
+                'exception.queuemanager.getjobresult.error',
                 array(
                     'error' => $Exception->getMessage()
                 )
-            );
+            ));
         }
     }
 

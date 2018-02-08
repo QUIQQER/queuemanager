@@ -1,76 +1,47 @@
-queuemanager
+![QUIQQER Queue Server Manager](bin/images/Readme.jpg)
+
+QUIQQER Queue Server Manager
 ========
 
-Stellt das Grundgerüst für Queue Server Jobs und Worker bereit
+This plugin enables you to use and implement asynchronous message queues within QUIQQER. Use different implementations of QUIQQER Queue Servers to add jobs to a queue. These jobs are then executed asynchronously, in parallel and do not halt or interfere with your main runtime.
 
-Paketname:
+This package in and of itself offers no direct functionality but is required for Queue Server implementations like `quiqqer/queueserver` (included as a requirement) or `quiqqer/rabbitmqserver`.
+
+Package Name:
 
     quiqqer/queuemanager
 
 
-Features (Funktionen)
+Features
 --------
-Automatisierte, asynchrone, verteilte Ausführung von Code
+* Framework for QUIQQER Queue Server implementations
 
 Installation
 ------------
+The Package Name is: quiqqer/queuemanager
 
-Der Paketname ist: quiqqer/queuemanager
-
-
-Mitwirken
+Usage
 ----------
+### General info
+Generally, a queue receives messages and outputs them to receivers in a pre-defined manner (in this case FIFO based on priority). A message
+is called a "job" in the QUIQQER Queue Server Manager context. Each job is executed by a "Worker". A Worker is a class that reads
+job data and can do with it whatever the developer desires.
 
-- Issue Tracker: 
-- Source Code: 
-
-
-Support
--------
-
-Falls Sie einen Fehler gefunden haben oder Verbesserungen wünschen,
-senden Sie bitte eine E-Mail an support@pcsg.de.
-
-
-Lizenz
--------
-
-
-Entwickler
---------
-
-Patrick Müller (p.mueller@pcsg.de)
-
-Beispiel
---------
-
-### Allgemeines
-
-Die Queue ist eine Art Warteschlange für auszuführende Aufgaben, die **asynchron** ausgeführt werden. Jede Aufgabe (`QueueJob`) wird von einem `QueueWorker` ausgeführt. Ein `QueueWorker`
-ist eine PHP-Klasse, die die Schnittstelle `IQueueWorker` implementiert und beliebigen PHP-Code ausführt. Für die Verwaltung und Distribution
- von `QueueJobs` an passende `QueueWorker` ist der `QueueServer` verantwortlich. `QueueServer` werden von separaten QUIQQER-Modulen
- bereitgestellt. Sie müssen die Schnittstelle `IQueueServer` implementieren.
-
-### Einen neuen Job ausführen und in die Queue senden
-
-Dieses Beispiel erstellt einen neuen `QueueJob` und reiht ihn in die Warteschlange ein. Die übergebene Klasse des `Workers`
-muss aus dem absoluten Namespace (mit anführendem `\ `) bestehen. Dadurch weiß der `QueueServer` an welchen `Worker` er die Daten
-des Jobs senden muss.
-
+### Implementation example
 ```php
 $Job = new \QUI\QueueManager\QueueJob(
     \QUI\QueueManager\Examples\ExampleWorker::getClass(),
     array(
-        'string' => 'Eins zwei drei vier'
+        'string' => 'One two three'
     )
 );
 
-$jobId = $Job->queue(); // Job in die Warteschlange einreihen
+$jobId = $Job->queue(); // Queue job
 
-// Speichere $jobId an geeigneter Stelle
+// Save $jobId if needed elsewhere (if you want to do something with the job later on)
 ```
 
-Der Beispiel-`Worker` `ExampleWorker` ist eine einfache Klasse, die einen String umkehrt:
+The Example-`Worker` `ExampleWorker` is a simple class that reverses a string
 
 ```php
 namespace QUI\QueueManager\Examples;
@@ -94,26 +65,30 @@ class ExampleWorker extends QueueWorker
     public function execute()
     {
         $string = $this->data['string'];
-        return strrev($string);
+        return strrev($string);  // this result is saved in the Job and the Job is then markes as completed
     }
 }
 ```
 
-Wann der `QueueServer` den `QueueJob` an einen passenden `QueueWorker` verteilt hat und wann dieser die Aufgabe erledigt hat,
-ist unbekannt. Daher muss in regelmäßigen Abständen gefragt werden, ob der `QueueJob` erledigt ist bzw. ob ein Ergebnis vorliegt.
-Nicht alle `QueueJobs` produzieren jedoch Ergebnisse, die wieder abgerufen werden können. Manche erledigen einfach nur ihre Aufgabe und sind
-dann ohne weitere Rückmeldung fertig (z.B. ein `QueueWorker` der eine E-Mail versendet).
-
 ```php
-    $jobStatus = \QUI\QueueManager\QueueManager::getJobStatus($jobId);
-    
-    // Status kann sein:
-    // 1 - Job ist in der Queue und noch nicht bearbeitet
-    // 2 - Job wird gerade bearbeitet
-    // 3 - Job wurde erfolgreich bearbeitet
-    // 4 - Bei der Bearbeitung des Jobs ist ein (unerwarteter) Fehler aufgetreten - in diesem Fall bitte die Log-Dateien ansehen
-    
-    $jobResult = \QUI\QueueManager\QueueManager::getJobResult($jobId);
-    
-    // enthält den umgekehrten String ("reiv ierd iewz sniE") oder wirft eine Exception, wenn der Job noch in Bearbeitung ist oder noch nicht bearbeitet wurde
+// fetch job result
+$result = \QUI\QueueServer\Server::getJobrResult($job); // "eerht owt enO"
 ```
+
+Contribute
+----------
+- Project: https://dev.quiqqer.com/quiqqer/queuemanager
+- Issue Tracker: https://dev.quiqqer.com/quiqqer/queuemanager/issues
+- Source Code: https://dev.quiqqer.com/quiqqer/queuemanager/tree/master
+
+
+Support
+-------
+If you found any errors or have wishes or suggestions for improvement,
+you can contact us by email at support@pcsg.de.
+
+We will transfer your message to the responsible developers.
+
+License
+-------
+GPL-3.0+

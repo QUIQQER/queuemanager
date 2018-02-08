@@ -1,6 +1,6 @@
 {
   "name": "quiqqer/queuemanager",
-  "type": "quiqqer-module",
+  "type": "quiqqer-plugin",
   "description": "Provides a basic framework for queue server jobs and workers.",
   "version": "dev-master",
   "license": "GPL-3.0+",
@@ -17,7 +17,7 @@
     "url": "http://www.pcsg.de"
   },
   "require": {
-    "quiqqer/queueserver": "dev-master"
+    "quiqqer/queueserver": ">=1.0|dev-master|dev-dev"
   },
   "autoload": {
     "psr-4": {
