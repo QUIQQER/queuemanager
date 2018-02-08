@@ -8,9 +8,11 @@
             <locale group="quiqqer/queuemanager" var="package.description"/>
         </description>
 
+        <image src="URL_OPT_DIR/quiqqer/queuemanager/bin/images/Logo.jpg"/>
+
         <preview>
-            <image src="URL_OPT_DIR/quiqqer/frontend-users/bin/images/preview/Backend_JobList.png"/>
-            <image src="URL_OPT_DIR/quiqqer/frontend-users/bin/images/preview/Backend_Settings.png"/>
+            <image src="URL_OPT_DIR/quiqqer/queuemanager/bin/images/preview/Backend_JobList.png"/>
+            <image src="URL_OPT_DIR/quiqqer/queuemanager/bin/images/preview/Backend_Settings.png"/>
         </preview>
 
         <support>
