@@ -1,28 +1,27 @@
 {
-  "name": "quiqqer/queuemanager",
-  "type": "quiqqer-plugin",
-  "description": "Provides a basic framework for queue server jobs and workers.",
-  "version": "dev-master",
-  "license": "GPL-3.0+",
-  "authors": [
-    {
-      "name": "Patrick Müller",
-      "email": "p.mueller@pcsg.de",
-      "homepage": "http://www.pcsg.de",
-      "role": "Developer"
+    "name": "quiqqer\/queuemanager",
+    "type": "quiqqer-plugin",
+    "description": "Provides a basic framework for queue server jobs and workers.",
+    "license": "GPL-3.0+",
+    "authors": [
+        {
+            "name": "Patrick M\u00fcller",
+            "email": "p.mueller@pcsg.de",
+            "homepage": "http:\/\/www.pcsg.de",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "email": "support@pcsg.de",
+        "url": "http:\/\/www.pcsg.de"
+    },
+    "require": {
+        "quiqqer\/quiqqer": ">=1.1|dev-master|dev-dev",
+        "quiqqer\/queueserver": ">=1.0|dev-master|dev-dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "QUI\\QueueManager\\": "src\/QUI\/QueueManager"
+        }
     }
-  ],
-  "support": {
-    "email": "support@pcsg.de",
-    "url": "http://www.pcsg.de"
-  },
-  "require": {
-    "quiqqer/quiqqer": ">=1.1|dev-master|dev-dev",
-    "quiqqer/queueserver": ">=1.0|dev-master|dev-dev"
-  },
-  "autoload": {
-    "psr-4": {
-      "QUI\\QueueManager\\": "src/QUI/QueueManager"
-    }
-  }
 }
