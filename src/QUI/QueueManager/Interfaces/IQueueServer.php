@@ -11,6 +11,7 @@ interface IQueueServer
     const JOB_STATUS_RUNNING  = 2;
     const JOB_STATUS_FINISHED = 3;
     const JOB_STATUS_ERROR    = 4;
+    const JOB_STATUS_CLONED   = 5;
 
     /**
      * Adds a single job to the queue of a server
